@@ -52,10 +52,13 @@ def download_subtitle(video_id, preferred_langs=['en']):
 
     selected_lang = 'en'
     subtitles = video_info.get('subtitles', {}) or video_info.get('automatic_captions', {})
-    if not subtitles or selected_lang not in subtitles:
+    if not subtitles:
         logger.warning(f"無可用字幕：{video_id}")
         return "", ""
         
+    if selected_lang not in subtitles:
+        selected_lang = list(subtitles.keys())[0]
+
     sub_url = subtitles[selected_lang][0]['url']
     subtitle_json = requests.get(sub_url).json()
 

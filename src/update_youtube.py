@@ -244,6 +244,9 @@ def make_doc(filename: str, video_list: list):
 # {title}
 
 {summary_file}
+
+---
+
 </details>
 
 """
@@ -287,7 +290,7 @@ def make_doc(filename: str, video_list: list):
         logger.error(f"製作文件失敗 {filename}: {str(e)}")
 
 def create_readme_doc(max_idx, latest_date):
-    content = f"""# Dr. Eric Berg DC ({latest_date})
+    content = f"""# INDIGO 科技加速站 ({latest_date})
 
 ---
 
@@ -403,8 +406,8 @@ def email_notify(new_df):
                 for receiver in receiver_emails:
                     # 為每個收件者建立新的郵件物件
                     msg = MIMEMultipart('alternative')
-                    msg['Subject'] = f"Dr. Eric Berg: {video['title']}"
-                    msg['From'] = f"Dr. Eric Berg <{sender_email}>"
+                    msg['Subject'] = f"INDIGO 科技加速站: {video['title']}"
+                    msg['From'] = f"INDIGO 科技加速站 <{sender_email}>"
                     msg['To'] = receiver
                     msg.attach(MIMEText(html_template, 'html'))
                     

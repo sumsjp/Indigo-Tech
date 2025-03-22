@@ -8,7 +8,6 @@ cd "$SCRIPT_DIR" || exit
 
 git pull
 python src/update_youtube.py
-python src/verify_chinese.py
 git pull
 git add .
 git commit -am .
