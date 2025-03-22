@@ -7,7 +7,7 @@ SCRIPT_DIR=$(dirname "$(realpath "$0")")
 cd "$SCRIPT_DIR" || exit
 
 git pull
-uv run src/update_youtube.py
+uv run ./update_youtube.py
 git pull
 git add ..
 git commit -am update_youtube
