@@ -27,7 +27,7 @@ readme_file = os.path.join(base_dir, 'README.md')
 csv_file = os.path.join(base_dir, 'src/video_list.csv')
 
 # === 設定頻道網址 ===
-channel_url = 'https://www.youtube.com/@Drberg/videos'
+channel_url = 'https://www.youtube.com/@indigo11/videos'
 
 # === 載入環境變數 ===
 load_result = load_dotenv()
